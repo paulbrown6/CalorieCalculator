@@ -71,7 +71,7 @@ public class FragmentStatistic extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_statistic, container, false);
+        final View view = inflater.inflate(R.layout.fragment_statistic, container, false);
         fstatNull = new FragmentStatisticNull();
         Spinner spinnerStat = view.findViewById(R.id.statistic_spinner);
         final Button calendarButtonStat = view.findViewById(R.id.statistic_date);
@@ -81,16 +81,7 @@ public class FragmentStatistic extends Fragment {
             @SuppressLint("NewApi")
             @Override
             public void onClick(View v) {
-//                FragmentStatisticCalendar.getInstance().createAlertDialog(getActivity());
-                new CalendarDialog(getContext(), new OnDaysSelectionListener() {
-                    @Override
-                    public void onDaysSelected(List<Day> selectedDays) {
-                        if (selectedDays != null) {
-                            DateResponse.getInstance().updateDateStatistic(selectedDays.get(0).getCalendar().getTime(),
-                                    selectedDays.get(selectedDays.size()-1).getCalendar().getTime());
-                        }
-                    }
-                });
+                FragmentStatisticCalendar.getInstance().createCalendarDialog(getContext());
             }
         });
         DateResponse.getInstance().getDateEntityState().observe(lifecycleOwner, new Observer<ArrayList<String>>() {

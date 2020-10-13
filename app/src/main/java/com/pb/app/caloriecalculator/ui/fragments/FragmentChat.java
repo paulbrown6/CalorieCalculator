@@ -26,7 +26,6 @@ import com.pb.app.caloriecalculator.ui.adapters.AdapterProduct;
 
 import java.util.ArrayList;
 
-@SuppressLint("ValidFragment")
 public class FragmentChat extends Fragment {
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,7 +48,6 @@ public class FragmentChat extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    @SuppressLint("ValidFragment")
     public FragmentChat() {
         // Required empty public constructor
     }

@@ -28,7 +28,6 @@
         <item>всего</item>
         <item>на 100г</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="statistic_type">
         <item>Текущая неделя</item>
         <item>Прошлая неделя</item>

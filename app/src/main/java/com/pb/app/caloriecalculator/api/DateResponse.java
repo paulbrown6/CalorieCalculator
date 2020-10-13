@@ -60,12 +60,17 @@ public class DateResponse {
         arrDay.add(dayFormat(new java.util.Date(new java.util.Date().getTime() + 172800000)));
         arrNumDay.add(dateFormat(new java.util.Date(new java.util.Date().getTime() + 172800000)).substring(0,2));
         datesStatistic = new ArrayList<>();
-        datesStatistic.add(yesterdayDate);
-        datesStatistic.add(todayDate);
+        datesStatistic.add(dateFormatToStatistic(stringToDate(yesterdayDate)));
+        datesStatistic.add(dateFormatToStatistic(stringToDate(todayDate)));
     }
 
     private String dateFormat(java.util.Date date){
         SimpleDateFormat formatForDateNow = new SimpleDateFormat("dd-MM-yyyy");
+        return formatForDateNow.format(date);
+    }
+
+    private String dateFormatToStatistic(java.util.Date date){
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("yyyy-MM-dd");
         return formatForDateNow.format(date);
     }
 
@@ -98,8 +103,8 @@ public class DateResponse {
     public void updateDateStatistic(java.util.Date dateOne, java.util.Date dateTwo){
         if (dateOne != null && dateTwo != null) {
             datesStatistic = new ArrayList<>();
-            datesStatistic.add(dateFormat(dateOne));
-            datesStatistic.add(dateFormat(dateTwo));
+            datesStatistic.add(dateFormatToStatistic(dateOne));
+            datesStatistic.add(dateFormatToStatistic(dateTwo));
             datesLiveData.setValue(datesStatistic);
         }
     }

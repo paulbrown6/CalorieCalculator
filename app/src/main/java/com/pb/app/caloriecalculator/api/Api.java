@@ -34,6 +34,6 @@ public interface Api {
     @DELETE("products/{id}")
     Call<ProductEntity> delProduct(@Header("Authorization") String token, @Path("id") int id);
 
-    @GET("products")
+    @GET("statistic")
     Call<StatisticEntity> getStatistic(@Header("Authorization") String token, @Query("start_date") String startDate, @Query("end_date") String endDate);
 }

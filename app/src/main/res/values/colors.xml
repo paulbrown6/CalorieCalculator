@@ -6,4 +6,5 @@
     <color name="colorNotVisible">#00FFFFFF</color>
     <color name="colorDropdBoard">#C4E087</color>
     <color name="colorNull">@null</color>
+    <color name="colorCalendarBackground">#FFE5E5</color>
 </resources>
