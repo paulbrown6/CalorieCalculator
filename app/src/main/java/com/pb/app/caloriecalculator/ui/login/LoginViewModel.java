@@ -10,6 +10,7 @@ import android.util.Patterns;
 import com.pb.app.caloriecalculator.api.App;
 import com.pb.app.caloriecalculator.data.LoginRepository;
 import com.pb.app.caloriecalculator.data.Result;
+import com.pb.app.caloriecalculator.data.database.DatabaseSQL;
 import com.pb.app.caloriecalculator.data.model.LoggedInUser;
 import com.pb.app.caloriecalculator.R;
 import com.pb.app.caloriecalculator.entity.AuthorisationEntity;

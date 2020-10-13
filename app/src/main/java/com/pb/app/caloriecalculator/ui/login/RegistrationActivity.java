@@ -22,6 +22,8 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.pb.app.caloriecalculator.HomeActivity;
 import com.pb.app.caloriecalculator.R;
+import com.pb.app.caloriecalculator.api.RetrofitCall;
+import com.pb.app.caloriecalculator.data.database.DatabaseSQL;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -77,6 +79,9 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
                     LoginActivity.setIsSign(true);
+                    DatabaseSQL.getInstance().readUserDb(getApplicationContext(),
+                            RetrofitCall.getInstance().getAuthorisationEntity().getToken(),
+                            RetrofitCall.getInstance().getAuthorisationEntity().getUserName());
                     startActivity(intent);
                     setResult(Activity.RESULT_OK);
                     finish();

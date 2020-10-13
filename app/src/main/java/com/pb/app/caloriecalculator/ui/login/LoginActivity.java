@@ -25,6 +25,8 @@ import android.widget.Toast;
 
 import com.pb.app.caloriecalculator.HomeActivity;
 import com.pb.app.caloriecalculator.R;
+import com.pb.app.caloriecalculator.api.RetrofitCall;
+import com.pb.app.caloriecalculator.data.database.DatabaseSQL;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,6 +39,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
         final Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+        if (DatabaseSQL.getInstance().writeUserDB(this)){
+            startActivity(intent);
+            finish();
+        }
         if (isSign) {
             startActivity(intent);
             finish();
@@ -80,6 +86,9 @@ public class LoginActivity extends AppCompatActivity {
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
                     isSign = true;
+                    DatabaseSQL.getInstance().readUserDb(getApplicationContext(),
+                            RetrofitCall.getInstance().getAuthorisationEntity().getToken(),
+                            RetrofitCall.getInstance().getAuthorisationEntity().getUserName());
                     startActivity(intent);
                     setResult(Activity.RESULT_OK);
                     finish();
