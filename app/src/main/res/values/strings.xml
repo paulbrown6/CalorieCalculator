@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Calorie Calculator</string>
+    <!-- Strings related to login -->
+    <string name="prompt_username">Имя пользователя</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Войти</string>
+    <string name="action_sign_in_short">Войти</string>
+    <string name="action_registration">Регистрация</string>
+    <string name="welcome">"Вы вошли как: "</string>
+    <string name="invalid_username">невозможный email</string>
+    <string name="invalid_password">не менее 5 символов</string>
+    <string name="login_failed">"Ошибка ввода email или пароля"</string>
+    <string name="title_activity_home">Calorie Calculator</string>
+    <string name="title_calculator">Калькулятор</string>
+    <string name="title_chat">Чат</string>
+    <string name="title_statistic">Статистика</string>
+    <string name="title_settings">Настройки</string>
+    <string name="title_activity_registration">Регистрация</string>
+    <string name="title_registration">Регистрация</string>
+    <string name="title_login">Вход</string>
+    <string name="name_product">Название продукта</string>
+    <string name="number_gram">Кол-во грамм</string>
+    <string name="number_ccal">Кол-во калорий</string>
+    <string name="add_product">Добавить</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="ccal_type">
+        <item>всего</item>
+        <item>на 100г</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="statistic_type">
+        <item>Текущая неделя</item>
+        <item>Прошлая неделя</item>
+        <item>Текущий месяц</item>
+        <item>Прошый месяц</item>
+        <item>Период</item>
+    </string-array>
+</resources>
